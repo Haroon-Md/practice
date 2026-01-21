@@ -1,7 +1,7 @@
 #!/bin/bash
 
-PERSON1=$1
-PERSON2=$2
+person1=$1
+person2=$2
 
 echo "$person1::sees the $person2 "
 echo "$person2::hii raa nanna"
