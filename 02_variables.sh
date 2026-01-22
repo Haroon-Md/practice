@@ -1,9 +1,21 @@
 #!/bin/bash
 
-person1=$1
-person2=$2
+echo "Enter a number:"
+read num
 
-echo "$person1::sees the $person2 "
-echo "$person2::hii raa nanna"
-echo "$person1::mundhu kaal thi raa pookaaa"
-echo "$person2:sarlevoii edho friendly ga esaam"
+# Numbers less than or equal to 1 are not prime
+if [ "$num" -le 1 ]; then
+  echo "$num is NOT a prime number"
+  exit 0
+fi
+
+# Check divisibility
+for (( i=2; i<=num/2; i++ ))
+do
+  if [ $((num % i)) -eq 0 ]; then
+    echo "$num is NOT a prime number"
+    exit 0
+  fi
+done
+
+echo "$num is a PRIME number"
