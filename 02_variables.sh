@@ -1,21 +1,9 @@
+
 #!/bin/bash
 
-echo "Enter a number:"
-read num
+USERID=$(id -u)
 
-# Numbers less than or equal to 1 are not prime
-if [ "$num" -le 1 ]; then
-  echo "$num is NOT a prime number"
-  exit 0
-fi
-
-# Check divisibility
-for (( i=2; i<=num/2; i++ ))
+for i in {1..5}
 do
-  if [ $((num % i)) -eq 0 ]; then
-    echo "$num is NOT a prime number"
-    exit 0
-  fi
+  echo $i
 done
-
-echo "$num is a PRIME number"
