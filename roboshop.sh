@@ -3,7 +3,7 @@
 AMI_ID="ami-0220d79f3f480ecf5"
 SG_ID="sg-0d7cfee2d46161f43"
 ZONE_ID="Z056913933IRRTVPZOIWF"
-DOMAIN-NAME="ahay.space"
+DOMAIN_NAME="ahay.space"
 
 for instance in $@
 do
