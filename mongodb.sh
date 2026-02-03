@@ -8,8 +8,8 @@ N="\e[0m"
 
 LOGS_FOLDER="/var/log/practice"
 SCRIPT_NAME=$( echo $0 | cut -d "." -f1 )
-LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log" # /var/log/shell-script/16-logs.log
-
+LOG_FILE="${LOGS_FOLDER}/${SCRIPT_NAME}.log" # /var/log/shell-script/16-logs.log
+echo "LOG_FILE: $LOG_FILE"
 mkdir -p $LOGS_FOLDER
 echo "Script started executed at: $(date)" | tee -a $LOG_FILE
 
@@ -36,5 +36,5 @@ VALIDATE $? "Installing MongoDB"
 systemctl enable mongod &>>$LOG_FILE
 VALIDATE $? "Enable MongoDB"
 
-systemctl start mongod 
+systemctl start mongod &>>$LOG_FILE
 VALIDATE $? "Start MongoDB"
