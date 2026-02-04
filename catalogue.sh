@@ -47,6 +47,8 @@ unzip /tmp/catalogue.zip &>>$LOG_FILE
 VALIDATE $? "unzip catalogue"
 npm install &>>$LOG_FILE
 VALIDATE $? "install dependencies" 
+pwd 
+ls -lrt
 cp catalogue.service /etc/systemd/system/catalogue.service
 VALIDATE $? "copy systemctl service"
 systemctl daemon-reload 
